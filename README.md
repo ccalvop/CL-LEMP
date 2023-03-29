@@ -35,6 +35,7 @@ En este proyecto, crearemos una instancia en Oracle Cloud y configuraremos un se
    - `sudo yum install epel-release`
    - `sudo yum install nginx`
 2. Verificar que Nginx esté instalado correctamente ejecutando el comando `nginx -v`.
+3. Para verificar si Nginx está funcionando correctamente, abra su navegador y escriba la dirección IP de su instancia de Oracle Cloud en la barra de direcciones. Si todo está configurado correctamente, debería ver la página de bienvenida de Nginx.
 
 ## Paso 5: Instalar MySQL
 
@@ -43,6 +44,7 @@ En este proyecto, crearemos una instancia en Oracle Cloud y configuraremos un se
    - `sudo systemctl start mysqld`
    - `sudo systemctl enable mysqld`
 2. Ejecutar el script de seguridad de MySQL con el comando `sudo mysql_secure_installation`.
+3. Verificar si MySQL está funcionando correctamente con el comando `sudo mysql -u root -p`.
 
 ## Paso 6: Instalar PHP
 
@@ -61,19 +63,44 @@ include snippets/fastcgi-php.conf;
 fastcgi_pass unix:/run/php/php-fpm.sock;
 }
 ```
+Comentar las siguientes lineas.
+```
+# location ~ \.php$ {
+# include snippets/fastcgi-php.conf;
+# fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+# }
+```
 3. Guardar los cambios y salir del editor de texto.
 4. Reiniciar Nginx con el comando `sudo systemctl restart nginx`.
 
 ## Paso 8: Verificar que LEMP esté instalado correctamente
 
+### HTML:
 1. Crear un archivo de prueba en la carpeta `/var/www/html/` con el siguiente contenido:
 ```
 <!DOCTYPE html>
-   <html>
-   <body>
-   <?php
-   phpinfo();
-   ?>
-   </body>
-   </html>
-   ```
+<html>
+<head>
+<title>Prueba de LEMP</title>
+</head>
+<body>
+<h1>LEMP instalado correctamente!</h1>
+</body>
+</html>
+```
+2. Guardar el archivo con el nombre index.html.
+3. Abrir un navegador web y navegar a la dirección IP pública de la instancia de Oracle Cloud.
+4. Debería ver la página de prueba con el mensaje "LEMP instalado correctamente!".
+
+### PHP:
+1. Crear un archivo de prueba en la carpeta /var/www/html/ con el siguiente contenido:
+```
+<?php
+phpinfo();
+?>
+```
+2. Guardar el archivo con el nombre info.php.
+3. Abrir un navegador web y navegar a la dirección IP pública de la instancia de Oracle Cloud seguida de /info.php.
+4. Debería ver una página que muestre información sobre la versión de PHP instalada en la instancia.
+
+
