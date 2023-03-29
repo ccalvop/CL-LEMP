@@ -93,7 +93,7 @@ Comentar las siguientes lineas.
 4. Debería ver la página de prueba con el mensaje "LEMP instalado correctamente!".
 
 ### PHP:
-1. Crear un archivo de prueba en la carpeta /var/www/html/ con el siguiente contenido:
+1. Crear un archivo de prueba en la carpeta `/var/www/html/` con el siguiente contenido:
 ```
 <?php
 phpinfo();
