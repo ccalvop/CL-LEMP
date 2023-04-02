@@ -80,17 +80,16 @@ Al ejecutar sudo mysql_secure_installation, se te pedirá que ingreses la contra
 
 La primera pregunta que se te hará es si deseas cambiar la contraseña del usuario root. Si no has establecido una contraseña aún, puedes elegir "N" para dejar la contraseña en blanco.
 
-La siguiente pregunta te preguntará si deseas desactivar el inicio de sesión remoto del usuario root. Es una buena práctica de seguridad desactivar el inicio de sesión remoto del usuario `root, por lo que puedes elegir "Y" para desactivarlo.
-
 La siguiente pregunta te preguntará si deseas eliminar los usuarios anónimos. Es una buena práctica de seguridad eliminar los usuarios anónimos para evitar posibles brechas de seguridad, por lo que puedes elegir "Y" para eliminarlos.
 
-La siguiente pregunta te preguntará si deseas desactivar el inicio de sesión del usuario root en el servidor de base de datos. Es una buena práctica de seguridad desactivar el inicio de sesión del usuario root en el servidor de base de datos, por lo que puedes elegir "Y" para desactivarlo.
+La siguiente pregunta te preguntará si deseas desactivar el inicio de sesión remoto del usuario root. Es una buena práctica de seguridad desactivar el inicio de sesión remoto del usuario `root, por lo que puedes elegir "Y" para desactivarlo.
 
-La siguiente pregunta te preguntará si deseas eliminar la base de datos de prueba. La base de datos de prueba es una base de datos que se crea automáticamente en MySQL para realizar pruebas y no es necesaria para un servidor de producción. Por lo tanto, es recomendable eliminarla, por lo que puedes elegir "Y" para eliminarla.
+La siguiente pregunta te preguntará si deseas desactivar el inicio de sesión del usuario root en el servidor de base de datos. Es una buena práctica de seguridad desactivar el inicio de sesión del usuario root en el servidor de base de datos, por lo que puedes elegir "Y" para desactivarlo.
 
 Finalmente, se te preguntará si deseas recargar los privilegios de la tabla de permisos para que los cambios surtan efecto. Elije "Y" para recargar los privilegios.
 ```
 
+```
 Si error 
 el método de autenticación que se está utilizando para el usuario root en MySQL no almacena datos de autenticación en el servidor MySQL. Debido a esto, no puedes usar el comando SET PASSWORD para establecer una contraseña para el usuario root. En su lugar, deberás usar el comando ALTER USER para establecer la contraseña del usuario root.
 
@@ -106,9 +105,35 @@ Después de ejecutar el comando ALTER USER, utiliza el siguiente comando para ac
 FLUSH PRIVILEGES;
 
 volver a ejecutar sudo mysql_secure_installation
-
---
+```
 
 3. Verifica que MySQL esté instalado y en ejecución ingresando el siguiente comando:
 sudo systemctl status mysql
+
+**Paso 3: Instalar PHP
+
+1. Instala PHP y sus módulos con el siguiente comando:
+sudo apt install php libapache2-mod-php php-mysql
+
+2. Verifica que PHP esté instalado ingresando el siguiente comando:
+php -v
+
+**Paso 4: Publicar una página web
+
+1. Crea una carpeta llamada public_html en la raíz de tu directorio de inicio con el siguiente comando:
+mkdir ~/public_html
+
+2. Crea un archivo index.php en la carpeta public_html con el siguiente comando:
+echo "<?php phpinfo(); ?>" > ~/public_html/index.php
+
+3. Reinicia Apache para que tome los cambios realizados con el siguiente comando:
+sudo systemctl restart apache2
+
+4. Verifica que Apache esté en ejecución y no haya errores con el siguiente comando:
+sudo systemctl status apache2
+
+-----
+poner pagina de prueba en ubicacion predeterminada /var/www/html
+cambiar permisos a /var/www/html
+sudo chown -R www-data:www-data /var/www/html
 
