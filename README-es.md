@@ -73,7 +73,7 @@ sudo apt install mysql-server
 sudo mysql_secure_installation
 Este comando te guiará a través de una serie de preguntas para mejorar la seguridad del servidor MySQL. Sigue las instrucciones para completar la configuración
 
-``
+```
 las preguntas de seguridad para configurar adecuadamente MySQL usando el comando mysql_secure_installation:
 
 Al ejecutar sudo mysql_secure_installation, se te pedirá que ingreses la contraseña del usuario root de MySQL. Si acabas de instalar MySQL, es posible que aún no hayas establecido una contraseña para el usuario root. En ese caso, simplemente presiona Enter para dejar la contraseña en blanco y continuar.
