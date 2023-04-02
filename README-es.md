@@ -19,7 +19,9 @@ ssh usuario@direccion-ip
 usar passphrase si se configuró
 
 copiar claves ssh (publica y privada) de ubuntu desktop a windows poweshell
+
 ccp@DESKTOP-14H7LU5:~/.ssh$ cp id_rsa /mnt/c/Users/COUGAR/.ssh
+
 ccp@DESKTOP-14H7LU5:~/.ssh$ cp id_rsa.pub /mnt/c/Users/COUGAR/.ssh
 
 mismo procedimiento para conectar desde windows powershell
