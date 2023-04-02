@@ -91,6 +91,24 @@ La siguiente pregunta te preguntará si deseas eliminar la base de datos de prue
 Finalmente, se te preguntará si deseas recargar los privilegios de la tabla de permisos para que los cambios surtan efecto. Elije "Y" para recargar los privilegios.
 ```
 
+Si error 
+el método de autenticación que se está utilizando para el usuario root en MySQL no almacena datos de autenticación en el servidor MySQL. Debido a esto, no puedes usar el comando SET PASSWORD para establecer una contraseña para el usuario root. En su lugar, deberás usar el comando ALTER USER para establecer la contraseña del usuario root.
+
+Para establecer la contraseña del usuario root en MySQL utilizando el comando ALTER USER, sigue estos pasos:
+
+Inicia sesión en MySQL como usuario root ejecutando el siguiente comando:
+sudo mysql -u root
+
+Una vez que hayas iniciado sesión en MySQL, utiliza el siguiente comando para establecer la contraseña del usuario root:
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'tu_contraseña';
+
+Después de ejecutar el comando ALTER USER, utiliza el siguiente comando para actualizar los cambios en la tabla de permisos:
+FLUSH PRIVILEGES;
+
+volver a ejecutar sudo mysql_secure_installation
+
+--
+
 3. Verifica que MySQL esté instalado y en ejecución ingresando el siguiente comando:
 sudo systemctl status mysql
 
