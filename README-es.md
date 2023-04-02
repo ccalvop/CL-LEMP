@@ -17,8 +17,10 @@ pegar clave publica antes de iniciar la instancia
 
 _______________________
 conectar desde ubuntu desktop:
+
 ssh usuario@direccion-ip
 143.47.43.162
+
 usar passphrase si se configuró
 
 copiar claves ssh (publica y privada) de ubuntu desktop a windows poweshell
@@ -34,12 +36,14 @@ _____________________
 crear archivo config en directorio .ssh
 
 en windows:
+
 Host oracle1
   HostName 143.47.43.162
   User ubuntu
   IdentityFile C:\Users\COUGAR\.ssh\id_rsa
   
 en ubuntu desktop:
+
 Host oracle1
   HostName 143.47.43.162
   User ubuntu
