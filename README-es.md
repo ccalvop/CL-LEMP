@@ -19,7 +19,7 @@ _______________________
 conectar desde ubuntu desktop:
 
 ssh usuario@direccion-ip
-143.47.43.162
+143.47.43.xxx
 
 usar passphrase si se configuró
 
@@ -38,14 +38,14 @@ crear archivo config en directorio .ssh
 en windows:
 
 Host oracle1
-  HostName 143.47.43.162
+  HostName 143.47.43.xxx
   User ubuntu
   IdentityFile C:\Users\COUGAR\.ssh\id_rsa
   
 en ubuntu desktop:
 
 Host oracle1
-  HostName 143.47.43.162
+  HostName 143.47.43.xxx
   User ubuntu
   IdentityFile ~/.ssh/id_rsa
   
