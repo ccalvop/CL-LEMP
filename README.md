@@ -103,4 +103,5 @@ phpinfo();
 3. Abrir un navegador web y navegar a la dirección IP pública de la instancia de Oracle Cloud seguida de /info.php.
 4. Debería ver una página que muestre información sobre la versión de PHP instalada en la instancia.
 
+![underconstruction](https://user-images.githubusercontent.com/126183973/233772660-9852d42d-6439-4dac-b2f0-91510ff65cfe.jpg)
 
