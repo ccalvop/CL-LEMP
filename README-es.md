@@ -1,3 +1,4 @@
+![underconstruction](https://user-images.githubusercontent.com/126183973/233772689-0592fd0b-cd89-4eb0-8fdb-ddb60c827302.jpg)
 
 
 GENERAR claves ssh en SO origen a conectar con cloud
@@ -25,9 +26,9 @@ usar passphrase si se configuró
 
 copiar claves ssh (publica y privada) de ubuntu desktop a windows poweshell
 
-ccp@DESKTOP-14H7LU5:~/.ssh$ cp id_rsa /mnt/c/Users/COUGAR/.ssh
+ccp@XXX:~/.ssh$ cp id_rsa /mnt/c/Users/XXX/.ssh
 
-ccp@DESKTOP-14H7LU5:~/.ssh$ cp id_rsa.pub /mnt/c/Users/COUGAR/.ssh
+ccp@XXX:~/.ssh$ cp id_rsa.pub /mnt/c/Users/XXX/.ssh
 
 mismo procedimiento para conectar desde windows powershell
 
@@ -40,7 +41,7 @@ en windows:
 Host oracle1
   HostName 143.47.43.xxx
   User ubuntu
-  IdentityFile C:\Users\COUGAR\.ssh\id_rsa
+  IdentityFile C:\Users\XXX\.ssh\id_rsa
   
 en ubuntu desktop:
 
