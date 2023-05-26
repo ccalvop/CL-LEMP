@@ -1,5 +1,7 @@
 # Cloud-LEMP
 
+![diagram-lemp-oracle](https://github.com/ccalvop/Cloud-LEMP/assets/126183973/01632bdf-0ab6-440f-bd5b-18e056880169)
+
 https://github.com/ccalvop/Cloud-LEMP/blob/main/README-es.md
 
 Este proyecto tiene como objetivo crear una instancia en Oracle Cloud y configurar un servidor LEMP (Linux, Nginx, MySQL y PHP).
